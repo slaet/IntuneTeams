@@ -3,14 +3,16 @@
     The scirpt checks if all current logged on users
     has allready get the new teams background images.
 .NOTE
-    Creator: Mirko Colemberg / baseVISION    Dev: Daniel Schädler    Version: 1.0.0.1
+    Creator: Mirko Colemberg / baseVISION
+    Dev: Daniel SchÃ¤dler
+    Version: 1.0.0.1
 .PARAMETER logFile
     The logfiles stores all the processed user accounts.
     This file will be queried by the detection method.
 #>
 
 #Get only the Pictures
-#$pictures = Get-ChildItem $PSScriptRoot -File | Where-Object { $_.Extension -iin @('.jpg', '.jpeg', '.png') }
+$pictures = Get-ChildItem $PSScriptRoot -File | Where-Object { $_.Extension -iin @('.jpg', '.jpeg', '.png') }
 
 #Get all Profiles with Exclude basic Profiles
 $Excluded_Profiles = @( 'Default User', 'All Users', 'Default', 'Public' )
